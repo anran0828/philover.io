@@ -26,6 +26,59 @@
       </div>
     </header>
 
+    <div class="control-bar control-bar-top is-collapsed" id="controlBar" role="region" aria-label="页面控制栏">
+      <div class="container">
+        <div class="control-mini">
+          <div class="control-mini-left">
+            <span class="control-mini-title">筛选与搜索</span>
+            <span class="muted control-mini-hint">（默认折叠）</span>
+          </div>
+          <div class="control-mini-right">
+            <button class="mini-btn" id="controlToggle" type="button" aria-expanded="false" aria-controls="controlBody">
+              展开
+            </button>
+            <div class="theme-buttons" role="group" aria-label="主题切换">
+              <button class="theme-btn" type="button" data-theme="pink">粉色</button>
+              <button class="theme-btn" type="button" data-theme="dark">深色</button>
+              <button class="theme-btn" type="button" data-theme="light">浅色</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="controlBody" class="control-body" hidden>
+        <div class="control-row">
+          <div class="control-group">
+            <label for="searchInput" class="label">搜索（流派/人物/关键词）</label>
+            <input
+              id="searchInput"
+              class="control-input"
+              type="search"
+              placeholder="输入如：康德 / 归纳问题 / 辩证法"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="control-group">
+            <label for="periodSelect" class="label">时期筛选</label>
+            <select id="periodSelect" class="control-select" aria-label="时期筛选">
+              <option value="all">全部时期</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group" style="flex: 1 1 520px;">
+            <label class="label">关键词筛选（点击标签）</label>
+            <div id="keywordChipsRoot" class="keyword-chips" aria-live="polite"></div>
+            <div class="muted" style="font-size:12px;margin-top:8px;">
+              未找到/找不到想要的词？直接用上面的搜索框输入也可以。
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
     <main class="container">
       <section class="hero">
         <h2>把“流派”读成一条时间的故事线</h2>
@@ -52,10 +105,17 @@
       <section id="timeline" class="section">
         <h2>按时间介绍各流派</h2>
         <p class="lead muted" style="margin:0 0 14px;">
-          点击浏览器滚轮往下：每个流派下面都有三张“关键人物”卡片（头像、介绍、三个关键词）。
+          支持搜索/筛选与点击展开弹窗：每个流派下面都有三张“关键人物”卡片（头像、介绍、三个关键词）。
         </p>
         <div id="timelineRoot" class="timeline" aria-live="polite"></div>
       </section>
+
+      <div class="modal-overlay" id="modalOverlay" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+          <button class="modal-close" id="modalClose" type="button" aria-label="关闭弹窗">×</button>
+          <div class="modal-body" id="modalBody"></div>
+        </div>
+      </div>
 
       <footer class="site-footer">
         <p class="muted">
