@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>哲学导览：粉色时间线</title>
+    <meta
+      name="description"
+      content="按时间介绍主要哲学流派；每个流派提供三个关键人物卡片（头像、介绍、三个关键词）。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">Φ</div>
+          <div class="brand-text">
+            <h1 class="brand-title">哲学导览</h1>
+            <p class="brand-subtitle">粉色时间线：从古典到当代</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#timeline" class="nav-link">时间线</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h2>把“流派”读成一条时间的故事线</h2>
+        <p class="lead">
+          每个阶段都有自己的提问方式：从知识与德性、到方法与真理，再到存在、语言与权力。
+          你可以把卡片当作“读书索引”，先认识三个人，再去找他们在争论什么。
+        </p>
+        <div class="hero-cards" role="list">
+          <div class="card" role="listitem">
+            <h3>时间顺序</h3>
+            <p>从古希腊到当代思潮。</p>
+          </div>
+          <div class="card" role="listitem">
+            <h3>三个关键人物</h3>
+            <p>每个流派都配套“读书入口”。</p>
+          </div>
+          <div class="card" role="listitem">
+            <h3>关键词速览</h3>
+            <p>用关键词把概念拎起来。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section">
+        <h2>按时间介绍各流派</h2>
+        <p class="lead muted" style="margin:0 0 14px;">
+          点击浏览器滚轮往下：每个流派下面都有三张“关键人物”卡片（头像、介绍、三个关键词）。
+        </p>
+        <div id="timelineRoot" class="timeline" aria-live="polite"></div>
+      </section>
+
+      <footer class="site-footer">
+        <p class="muted">
+          提醒：本页面是学习导览与索引整理，不替代原著阅读。若你需要更精确的史实/定义，我建议回到原作者的文本与权威注释。
+        </p>
+      </footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+
